@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide do Aplicativo TaskChamp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-speaker"></div>
+        <div class="phone-camera"></div>
+
+        <div class="phone-screen" id="phoneScreen">
+            <!-- Slide 1: Welcome/Login -->
+            <div class="slide" id="slide-1">
+                <img src="logo.png" alt="App Logo Icon" class="mb-8 logo-circular" />
+                <h2 class="text-duolingo-red">Bem-vindo ao Limpou Ganhou!</h2>
+                <p>Limpe a casa, ganhe dinheiro!</p>
+                <button class="duo-button mb-4">Entrar</button>
+                <button class="duo-button outline">Criar Conta</button>
+            </div>
+
+            <!-- Slide 2: Create/Join Room -->
+            <div class="slide" id="slide-2">
+                <h2 class="text-duolingo-red">Crie ou Junte-se a uma Sala</h2>
+                <p>Organize sua competição doméstica.</p>
+                <button class="duo-button mb-4">Criar Nova Sala</button>
+                <button class="duo-button outline">Entrar em uma Sala</button>
+                <p class="text-xs text-gray-500 mt-4">Peça o código da sala aos seus amigos!</p>
+            </div>
+
+            <!-- Slide 3: Set Stakes -->
+            <div class="slide" id="slide-3">
+                <h2 class="text-duolingo-red">Defina a Recompensa</h2>
+                <p>Quanto vocês querem disputar neste mês?</p>
+                <input
+                    type="number"
+                    placeholder="R$ 50,00"
+                    value="50.00"
+                    class="text-duolingo-red-light font-extrabold"
+                />
+                <button class="duo-button">Confirmar Valor</button>
+                <p class="text-xs text-gray-500 mt-4">Todos os participantes devem concordar com o valor.</p>
+            </div>
+
+            <!-- Slide 4: Monthly Chore List -->
+            <div class="slide" id="slide-4">
+                <h2 class="text-duolingo-red">Sua Lista de Tarefas Mensal</h2>
+                <p>Cada tarefa vale pontos. Acumule para vencer!</p>
+                <div class="points-item">
+                    <span>Lavar a Louça</span>
+                    <span class="points">150 pts</span>
+                </div>
+                <div class="points-item">
+                    <span>Limpar o Banheiro</span>
+                    <span class="points">100 pts</span>
+                </div>
+                <div class="points-item">
+                    <span>Varrer</span>
+                    <span class="points">70 pts</span>
+                </div>
+                <div class="points-item">
+                    <span>Tirar o Lixo</span>
+                    <span class="points">20 pts</span>
+                </div>
+                <button class="duo-button mt-6">Ver Todas as Tarefas</button>
+            </div>
+
+            <!-- Slide 5: Complete Task -->
+            <div class="slide" id="slide-5">
+                <h2 class="text-duolingo-red">Conclua e Ganhe Pontos!</h2>
+                <p>Marque a tarefa como concluída e os pontos são seus.</p>
+                <div class="points-item bg-green-100 border-l-4 border-green-500">
+                    <span>Lavar a Louça</span>
+                    <span class="points">50 pts <span style="font-size: 1.5em;">✅</span></span>
+                </div>
+                <p class="text-center text-gray-600 mt-8 font-bold text-xl">Você ganhou 50 pontos!</p>
+                <img
+                    src="https://placehold.co/100x100/4CAF50/FFFFFF?text=%E2%AD%90"
+                    alt="Star Icon"
+                    class="mt-4 mb-4 animate-bounce"
+                />
+                <button class="duo-button mt-6">Voltar para Tarefas</button>
+            </div>
+
+            <!-- Slide 6: Winner Announcement -->
+            <div class="slide" id="slide-6">
+                <h2 class="text-duolingo-red">O Vencedor!</h2>
+                <p>Parabéns ao campeão do mês!</p>
+                <p class="text-center text-duolingo-red font-extrabold text-3xl mb-2">Maria!</p>
+                <img src="avatar.png" alt="Foto do Campeão" class="champion-photo mb-4" />
+                <p class="text-center text-gray-700 text-lg mb-8">Ganhou R$ 50,00!</p>
+                <button class="duo-button">Ver Classificação</button>
+                <p class="text-xs text-gray-500 mt-4">Nova competição começa em 3 dias!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-buttons">
+        <button id="prevBtn" class="nav-btn">Anterior</button>
+        <div id="slideIndicators" class="slide-indicators"></div>
+        <button id="nextBtn" class="nav-btn">Próximo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

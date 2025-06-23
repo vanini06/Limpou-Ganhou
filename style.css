@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.phone-frame {
+    width: 375px; /* Standard phone width */
+    height: 667px; /* Standard phone height for 16:9 aspect ratio */
+    background-color: #000;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 8px #333;
+    padding: 15px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide overflow from slides */
+}
+
+.phone-notch {
+    width: 120px;
+    height: 25px;
+    background-color: #000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.phone-speaker {
+    width: 40px;
+    height: 5px;
+    background-color: #222;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11; /* Above notch */
+}
+
+.phone-camera {
+    width: 8px;
+    height: 8px;
+    background-color: #222;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 60px); /* Left of notch */
+    z-index: 11;
+}
+
+.phone-screen {
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 25px; /* Match inner border radius */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-start; /* Align slides to top */
+    justify-content: flex-start;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    min-width: 100%; /* Ensure slides take full width */
+    position: absolute; /* Position slides absolutely */
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff; /* Default slide background */
+}
+
+/* Duolingo-like Red Colors */
+.bg-duolingo-red {
+    background-color: #0a7961; /* Darker Red */
+}
+.bg-duolingo-red-light {
+    background-color: #A52A2A; /* Slightly lighter */
+}
+.text-duolingo-red {
+    color: #0a7961;
+}
+
+/* Custom button styling for Duolingo aesthetic */
+.duo-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 1.25rem;
+    color: white;
+    font-weight: 800;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    transform-origin: center;
+    background-color: #0a7961; /* Dark red */
+    border-bottom: 5px solid #055548; /* Darker border for depth */
+    cursor: pointer;
+}
+.duo-button:hover {
+    background-color: #055548; /* Slightly lighter on hover */
+}
+.duo-button.outline {
+    background-color: transparent;
+    color: #0a7961;
+    border: 3px solid #0a7961;
+    border-bottom: 5px solid #0a7961; /* Same as border for outline */
+    box-shadow: none;
+}
+.duo-button.outline:hover {
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+.slide h2 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0a7961;
+}
+.slide p {
+    text-align: center;
+    color: #4A5568; /* gray-700 */
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+.slide input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #D1D5DB; /* gray-300 */
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #A52A2A; /* text-duolingo-red-light */
+}
+.slide input:focus {
+    outline: none;
+    border-color: #16A34A; /* focus:border-duolingo-red */
+}
+.slide .points-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #F9FAFB; /* gray-50 */
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.slide .points-item span {
+    font-weight: 600;
+}
+.slide .points-item .points {
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: #16A34A; /* green-600 */
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+.nav-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #D1D5DB; /* gray-300 */
+    color: #374151; /* gray-800 */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+.nav-btn:hover {
+    background-color: #9CA3AF; /* gray-400 */
+}
+.nav-btn.opacity-50 {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slide-indicators {
+    position: absolute; /* Position it relative to the nearest positioned ancestor (phone-screen) */
+    bottom: 20px; /* Adjust this value as needed to set distance from the bottom */
+    left: 50%; /* Start from the middle horizontally */
+    transform: translateX(-50%); /* Pull it back by half its width to truly center it */
+    display: flex;
+    justify-content: center;
+    /* margin-top: 1rem;  Remove this if using absolute positioning */
+}
+.indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #9CA3AF; /* gray-400 */
+    border-radius: 9999px;
+    margin: 0 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.indicator.active {
+    background-color: #0a7961;
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.logo-circular {
+    width: 200px;       /* ajuste o tamanho que quiser */
+    height: 200px;      /* mantenha altura igual à largura */
+    border-radius: 50%; /* deixa o formato circular */
+    object-fit: cover;  /* mantém proporção e preenche o círculo */
+    display: block;     /* elimina espaços em linha */
+}
+
+.champion-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%; /* deixa a imagem circular */
+    object-fit: cover;  /* evita deformações */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10 auto;
+    display: block;
+}
